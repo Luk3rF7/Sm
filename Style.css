@@ -1,0 +1,185 @@
+/* reset css */
+:root {
+  --border--projet: 1px solid #ccc;
+  --border-picture: #ccc;
+  /* light mode */
+  --text-color: white;
+  --bg-url: url(./assets/darkModeMobile.jpg);
+  --stroker-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.3);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.5);
+  --btn--switch: url(./assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --border-picture: black;
+  --bg-url: url(./assets/lightModeMobile.png);
+  --boder-picture: black;
+  --stroker-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --btn--switch: url(./assets/sun.svg);
+}
+/* reset Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: var(--bg-url);
+  background-size: auto;
+  height: 100%;
+}
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+/* ===== Container ===== */
+#container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding-top: 0 24px;
+}
+
+/* ==== Perfil ===== */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid var(--border-picture);
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+/* ===== Swicth Dark / Light */
+/* ==== Links ======= */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--btn--switch) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  /* Transform de transforma elemento */
+  transform: translateY(-50%);
+  animation: slide-back 0.2s;
+}
+.light #switch button {
+  animation: slide-in 0.2s forwards;
+}
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color-hover);
+  border: 1px solid var(--stroker-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  height: 52px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroker-color);
+  border-radius: 4px;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+/*  pseudo-selector - sudo selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+/*  ======= social link  ======== */
+
+#social-link {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+#social-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-link a:hover {
+  background: var(--surface-color);
+}
+
+/* ==== footer ========== */
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* animation */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/darkModeDesktop.png);
+  }
+
+  .light {
+    --bg-url: url(./assets/lightModeDesktop.png);
+  }
+}
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
