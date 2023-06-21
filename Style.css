@@ -4,7 +4,7 @@
   --border-picture: #ccc;
   /* light mode */
   --text-color: white;
-  --bg-url: url(./assets/darkModeMobile.jpg);
+  --bg-url: url(./assets/darkModeMobile.jpg) no-repeat top center cover;
   --stroker-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.3);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
@@ -14,7 +14,7 @@
 .light {
   --text-color: black;
   --border-picture: black;
-  --bg-url: url(./assets/lightModeMobile.png);
+  --bg-url: url(./assets/lightModeMobile.png) no-repeat top center cover;
   --boder-picture: black;
   --stroker-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
@@ -29,9 +29,11 @@
   box-sizing: border-box;
 }
 body {
+  height: 100vh;
   background-image: var(--bg-url);
-  background-size: auto;
-  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 body * {
   font-family: "Inter", sans-serif;
@@ -40,9 +42,10 @@ body * {
 /* ===== Container ===== */
 #container {
   width: 100%;
+  height: 100%;
   max-width: 588px;
-  margin: 56px auto 0px;
-  padding-top: 0 24px;
+  margin: 10px auto 10px;
+  padding-top: 0px;
 }
 
 /* ==== Perfil ===== */
@@ -67,7 +70,7 @@ body * {
 #switch {
   position: relative;
   width: 64px;
-  margin: 4px auto;
+  margin: 4px auto 0;
 }
 #switch button {
   width: 32px;
@@ -77,6 +80,7 @@ body * {
   border-radius: 50%;
   position: absolute;
   top: 50%;
+  
   left: 0;
   z-index: 1;
   /* Transform de transforma elemento */
@@ -157,9 +161,20 @@ footer {
 }
 
 /* animation */
-@media (min-width: 700px) {
+@media (min-width: 700vw) {
   :root {
     --bg-url: url(./assets/darkModeDesktop.png);
+    background-repeat: no-repeat;
+  }
+
+  .light {
+    --bg-url: url(./assets/lightModeDesktop.png) cover no-repeat center;
+  }
+}
+@media (min-width: 350px) {
+  :root {
+    --bg-url: url(./assets/darkModeDesktop.png);
+    background-size: auto;
   }
 
   .light {

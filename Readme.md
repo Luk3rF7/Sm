@@ -1,6 +1,6 @@
 <h1 align="center"> Projeto SM Links </h1>
 
-<h1> Projeto Desenvolvido com as Tecnologia: </h1>
+<h1> Projeto Desenvolvido com as Tecnologia:</h1>
 
   <ul>
   <li> Html</li>
