@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Josefin+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Rede Sociais</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <!-- Profile  -->
+      <div id="profile">
+        <img src="./assets/foto.jpg" alt="Foto perfil " />
+        <p>@Lcode</p>
+      </div>
+      <!-- Button mode light / dark -->
+      <div id="switch" onclick="toggleMode()">
+        <button id="click"></button>
+        <span></span>
+      </div>
+      <!-- lista de link -->
+      <ul>
+        <li>
+          <a href="#">Projeto Agenda</a>
+        </li>
+        <li>
+          <a href="#">Projeto Escola</a>
+        </li>
+        <li>
+          <a href="#">Port Folio</a>
+        </li>
+        <li>
+          <a href="#">Meu blog</a>
+        </li>
+      </ul>
+      <div id="social-link">
+        <a href="https://github.com/Luk3rF7" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://www.instagram.com/lkas_f/" target="_blank">
+          <ion-icon name="logo-Instagram"></ion-icon>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/lucas-felipe-a58b34259/"
+          target="_blank"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="https://twitter.com/Lukaz_f94" target="_blank">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </div>
+      <!-- footer -->
+      <footer>Desenvolvido por Lcode</footer>
+    </div>
+    <!-- script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

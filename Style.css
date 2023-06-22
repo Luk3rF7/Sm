@@ -1,0 +1,233 @@
+/* reset css */
+:root {
+  --border--projet: 1px solid #ccc;
+  --border-picture: #ccc;
+  /* light mode */
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroker-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --btn--switch: url(./assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --border-picture: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --boder-picture: black;
+  --stroker-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --btn--switch: url(./assets/sun.svg);
+}
+/* reset Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /*
+   background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; */
+  /* Background :color image repeat  Agrupando
+  ShotRand
+  */
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100%;
+}
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+/* seletor de Id = # */
+/* ===== Container ===== */
+#container {
+  /* 
+  margin: 20px (emcima em baixo) auto;
+  margin: 56px(emcima) auto(lados) 0px(embaixo);
+  margin: o(top),0(left),0(bottom),0(right)
+  
+  */
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding-top: 0 24px;
+
+  /* Regra de display - none ele retira
+  display block  de "bloco"automaticamente vai pega elemento e vai dar toda largura da tela 
+  display inline  em "linha"
+  display: inline;
+  */
+  /* para centralizar pode utilizar margin:auto
+  margin-left: auto;
+  margin-right: auto;
+  */
+}
+
+/* ==== Perfil ===== */
+#profile {
+  text-align: center;
+  /* ajusta elemento filhos,
+   casoseja block  ele não vai ajustar pois block 
+   ocupa toda largura*/
+  padding: 24px;
+}
+#profile img {
+  /*  altura segure com  altura do body */
+  width: 112px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid var(--border-picture);
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+/* ===== Swicth Dark / Light */
+/* ==== Links ======= */
+#switch {
+  position: relative;
+  width: 64px;
+  /* ele vai relativar o absolute */
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--btn--switch) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  /* qndo position e absolute e sobreposição de camadas 
+  e posso mudar com z-index */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  /* Transform de transforma elemento */
+  transform: translateY(-50%);
+  animation: slide-back 0.2s;
+}
+.light #switch button {
+  animation: slide-in 0.2s forwards;
+}
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color-hover);
+  border: 1px solid var(--stroker-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /*  modo gap vai dar espaço entre elementos
+  */
+  gap: 8px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  height: 52px;
+  /* 
+  como funciona rgba -> red green blue alfa
+  red ->
+  green ->
+  blue ->
+  alfa ->
+  */
+  background: var(--surface-color);
+  border: 1px solid var(--stroker-color);
+  border-radius: 4px;
+  /* 
+  blur -> deixa embaçado
+  --web-kit- = verdor prefixes -> prefixo de uns browser pra pode liberar
+  */
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+
+  /* transition: 
+  all e todas */
+
+  transition: background 0.2s;
+}
+
+/*  pseudo-selector - sudo selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+/*  ======= social link  ======== */
+
+#social-link {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+#social-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-link a:hover {
+  background: var(--highlight-color);
+}
+
+/* ==== footer ========== */
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+/* media queries */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
