@@ -1,5 +1,6 @@
 /* reset css */
 :root {
+  --bg--color: red;
   --border--projet: 1px solid #ccc;
   --border-picture: #ccc;
   /* light mode */
