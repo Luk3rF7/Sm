@@ -19,3 +19,5 @@
  <h1>Modo Dark </h1>
  <img align="center" src="./assets/visualDarkMode.png" alt="versão Dark" >
  </div>
+
+ <h1 align="center">Projeto feitono curso discover da Rockseat </h1>
